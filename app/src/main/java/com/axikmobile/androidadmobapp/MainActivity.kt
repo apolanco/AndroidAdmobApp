@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        MobileAds.initialize(this, "ca-app-pub-5548587920604266~5963992173")
+
         content = findViewById(R.id.fragment_container) as FrameLayout
         val navigation = findViewById(R.id.bottom_nativation_view) as BottomNavigationView
         navigation.setOnNavigationItemReselectedListener { myOnNavigationItemSelectedListener }
