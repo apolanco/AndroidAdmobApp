@@ -10,26 +10,25 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-
     private var content: FrameLayout? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        MobileAds.initialize(this, "ca-app-pub-5548587920604266~5963992173")
+        MobileAds.initialize(this) {}
 
-        content = findViewById(R.id.fragment_container) as FrameLayout
-        val navigation = findViewById(R.id.bottom_nativation_view) as BottomNavigationView
-        navigation.setOnNavigationItemReselectedListener { myOnNavigationItemSelectedListener }
+        content = findViewById<FrameLayout>(R.id.fragment_container)
+        val navigation = findViewById<BottomNavigationView>(R.id.bottom_nativation_view)
+        navigation.setOnNavigationItemSelectedListener (myOnNavigationItemSelectedListener)
     }
 
     private val myOnNavigationItemSelectedListener = object: BottomNavigationView.OnNavigationItemSelectedListener {
 
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
-            when (item.itemId) {
+            when(item.itemId){
 
                 R.id.action_banner -> {
-                   // val fragment = BannerFragment()
-                 //   loadFragment(fragment)
+                    val fragment = BannerFragment()
+                    loadFragment(fragment)
                     return true
                 }
 
@@ -60,6 +59,4 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(fragment.javaClass.simpleName)
             .commit()
     }
-
-
 }
