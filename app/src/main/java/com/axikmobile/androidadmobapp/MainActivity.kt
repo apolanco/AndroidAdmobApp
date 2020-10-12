@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.action_intersticial -> {
-                   // val fragment = IntersticialFragment()
-                   //loadFragment(fragment)
+                    val fragment = IntersticialFragment()
+                    loadFragment(fragment)
                     return true
 
                 }
