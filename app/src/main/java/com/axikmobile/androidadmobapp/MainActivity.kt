@@ -11,9 +11,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private var content: FrameLayout? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         MobileAds.initialize(this) {}
 
         content = findViewById<FrameLayout>(R.id.fragment_container)
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val myOnNavigationItemSelectedListener = object: BottomNavigationView.OnNavigationItemSelectedListener {
 
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
             when(item.itemId){
 
                 R.id.action_banner -> {
@@ -40,8 +43,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.action_video -> {
-                   // val fragment = VideoFragment()
-                   // loadFragment(fragment)
+                    val fragment = VideoFragment()
+                    loadFragment(fragment)
                     return true
 
                 }

@@ -20,12 +20,14 @@ class BannerFragment: Fragment(){
         super.onActivityCreated(savedInstanceState)
 
         val adRequest = AdRequest.Builder().build()
+
         adView.loadAd(adRequest)
         adView.adListener = object: AdListener() {
+
             override fun onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
                // Toast.makeText(context, "onAdLoaded", Toast.LENGTH_SHORT).show()
-                ToastHelper.showToast(context, "onAdLoaded")
+               ToastHelper.showToast(context, "onAdLoaded")
             }
 
             override fun onAdFailedToLoad(adError : LoadAdError) {

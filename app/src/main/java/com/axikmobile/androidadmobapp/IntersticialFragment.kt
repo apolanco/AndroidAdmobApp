@@ -15,7 +15,9 @@ import kotlinx.android.synthetic.main.fragment_banner.*
 import kotlinx.android.synthetic.main.fragment_intersticial.*
 
 class IntersticialFragment: Fragment(){
+
     private lateinit var mInterstitialAd: InterstitialAd
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_intersticial, null)
     }
@@ -74,6 +76,5 @@ class IntersticialFragment: Fragment(){
                 ToastHelper.showToast(context, "onAdImpression")
             }
         }
-
     }
 }
