@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         MobileAds.initialize(this) {}
 
+
         content = findViewById<FrameLayout>(R.id.fragment_container)
         val navigation = findViewById<BottomNavigationView>(R.id.bottom_nativation_view)
         navigation.setOnNavigationItemSelectedListener (myOnNavigationItemSelectedListener)
